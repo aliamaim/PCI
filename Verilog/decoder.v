@@ -1,3 +1,6 @@
+//This is a special purpose decoder which will be used in the ARBITER in the FIRST IN FIRST OUT mode.
+//It's inputs comes from the FIFO (who to give the grant) and it's output is driving the grants coming out from the ARBITER.
+
 module DECODER(out_d, in_d);
 	output wire[2:0] out_d;
 	input wire[7:0] in_d;
