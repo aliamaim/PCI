@@ -16,3 +16,32 @@ module ENCODER(out_e, in_e);
 				   (in_d == 3'd7)? 8'b0111_1111: 8'hff;
 
 endmodule // module
+
+module tb_encoder();
+	reg[2:0] in_e;
+	wire[7:0] out_e;
+
+	initial
+	begin
+		$monitor("in:%b, out_d:%d", in_e, out_e);
+		#1
+		in_e = 3'd0;
+		#1
+		in_e = 3'd1;
+		#1
+        in_e = 3'd2;
+		#1
+		in_e = 3'd3;
+		#1
+		in_e = 3'd4;
+		#1
+		in_e = 3'd5;
+		#1
+		in_e = 3'd6;
+		#1
+		in_e = 3'd7;
+		#1
+
+	end
+	ENCODER enc1(out_e, in_e);
+endmodule
