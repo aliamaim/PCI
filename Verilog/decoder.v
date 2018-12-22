@@ -15,3 +15,32 @@ module DECODER(out_d, in_d);
 				   (in_d == 8'b1011_1111)? 3'd6:
 				   (in_d == 8'b0111_1111)? 3'd7: 3'bzzz;
 endmodule
+
+
+
+module tb_decoder();
+	reg[7:0] in_d;
+	wire[2:0] out_d;
+
+	initial	begin
+		$monitor("in:%b, out_d:%d", in_d, out_d);
+		#1
+		in_d = 8'b1111_1110;
+		#1
+		in_d = 8'b1111_1101;
+		#1
+		in_d = 8'b1111_1011;
+		#1
+		in_d = 8'b1111_0111;
+		#1
+		in_d = 8'b1110_1111;
+		#1
+		in_d = 8'b1101_1111;
+		#1
+		in_d = 8'b1011_1111;
+		#1
+		in_d = 8'b0111_1111;
+
+	end
+	DECODER dec1(out_d, out_d);
+endmodule
