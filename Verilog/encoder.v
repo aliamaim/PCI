@@ -1,3 +1,6 @@
+//This module is a special purpose encoder which will be used in part of the ARBITER in the FIRST IN FIRST OUT protocol.
+//It's input is the request lines from the devices and it's output goes directly to the FIFO which processes the requests and orders it.
+
 module ENCODER(out_e, in_e);
 	output wire[7:0] out_e;
 	input wire[2:0] in_e;
